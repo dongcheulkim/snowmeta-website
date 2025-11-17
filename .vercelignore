@@ -1,0 +1,12 @@
+# Ignore .claude folder
+.claude/
+
+# Ignore optimization scripts
+optimize_images.py
+
+# Ignore zip file
+*.zip
+
+# Ignore git files
+.git/
+.gitignore
