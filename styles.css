@@ -1358,8 +1358,12 @@ body {
     }
 
     .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
     }
 
     .pricing-card h3 {
@@ -1529,12 +1533,16 @@ body {
     }
 
     .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .pricing-card {
+        padding: 20px 15px;
     }
 
     .pricing-card h3 {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .price {
