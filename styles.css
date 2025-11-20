@@ -1251,9 +1251,26 @@ body {
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
-    .nav-menu {
-        gap: 20px;
+    body {
         font-size: 16px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 60px 15px;
     }
 
     .hero h1 {
@@ -1265,25 +1282,143 @@ body {
     }
 
     .slogan-item {
-        font-size: 48px;
+        font-size: 42px;
+        letter-spacing: 4px;
+    }
+
+    .section {
+        padding: 60px 15px;
     }
 
     .section-title {
         font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .subsection-title {
+        font-size: 28px;
+        margin: 50px 0 30px 0;
+    }
+
+    .page-header {
+        padding: 30px 15px 25px 15px;
     }
 
     .page-header h1 {
-        font-size: 44px;
+        font-size: 38px;
+    }
+
+    .page-header p {
+        font-size: 16px;
+    }
+
+    .intro-text {
+        font-size: 17px;
+    }
+
+    .about-card,
+    .branch-card,
+    .team-card,
+    .pricing-card {
+        padding: 30px 25px;
+    }
+
+    .about-card h3 {
+        font-size: 22px;
+    }
+
+    .about-card p {
+        font-size: 16px;
+    }
+
+    .branch-card h3 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .branch-info {
+        font-size: 15px;
+    }
+
+    .team-card h3 {
+        font-size: 20px;
+    }
+
+    .team-role {
+        font-size: 16px;
+    }
+
+    .team-exp {
+        font-size: 13px;
+    }
+
+    .pricing-card h3 {
+        font-size: 22px;
+    }
+
+    .price {
+        font-size: 30px;
+    }
+
+    .pricing-features li {
+        font-size: 15px;
+    }
+
+    .service-name {
+        font-size: 16px;
+    }
+
+    .service-price {
+        font-size: 17px;
     }
 
     .contact-content {
         grid-template-columns: 1fr;
     }
 
+    .contact-info h3,
+    .contact-form h3 {
+        font-size: 24px;
+    }
+
+    .contact-item {
+        font-size: 16px;
+    }
+
     .service-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+        padding: 15px 0;
+    }
+
+    .filter-btn {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    .team-modal-wrapper {
+        flex-direction: column;
+    }
+
+    .team-modal-left {
+        width: 100%;
+    }
+
+    .team-modal-content {
+        padding: 30px 20px;
+    }
+
+    .slider-image {
+        height: 300px;
+    }
+
+    .footer {
+        padding: 40px 15px;
+    }
+
+    .footer p {
+        font-size: 13px;
     }
 }
 
@@ -1293,27 +1428,144 @@ body {
         gap: 15px;
     }
 
+    .logo-img {
+        height: 35px;
+    }
+
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 12px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 40px 15px;
     }
 
     .hero h1 {
-        font-size: 32px;
-    }
-
-    .slogan-item {
-        font-size: 36px;
-    }
-
-    .section-title {
         font-size: 28px;
     }
 
-    .page-header h1 {
+    .slogan-item {
         font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .section {
+        padding: 50px 15px;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .subsection-title {
+        font-size: 24px;
+        margin: 40px 0 25px 0;
+    }
+
+    .page-header {
+        padding: 25px 15px 20px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
         letter-spacing: 1px;
+    }
+
+    .page-header p {
+        font-size: 14px;
+    }
+
+    .intro-text {
+        font-size: 15px;
+    }
+
+    .about-card,
+    .branch-card,
+    .team-card,
+    .pricing-card {
+        padding: 25px 20px;
+    }
+
+    .about-card h3 {
+        font-size: 20px;
+    }
+
+    .about-card p {
+        font-size: 15px;
+    }
+
+    .branch-card h3 {
+        font-size: 24px;
+    }
+
+    .branch-info {
+        font-size: 14px;
+    }
+
+    .team-card h3 {
+        font-size: 18px;
+    }
+
+    .team-role {
+        font-size: 15px;
+    }
+
+    .pricing-card h3 {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 26px;
+    }
+
+    .pricing-features li {
+        font-size: 14px;
+    }
+
+    .service-name {
+        font-size: 15px;
+    }
+
+    .service-price {
+        font-size: 16px;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+        font-size: 22px;
+    }
+
+    .contact-item {
+        font-size: 15px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .quick-link-card {
+        padding: 30px 25px;
+    }
+
+    .quick-icon {
+        font-size: 50px;
+    }
+
+    .quick-link-card h3 {
+        font-size: 20px;
+    }
+
+    .quick-link-card p {
+        font-size: 15px;
     }
 }
 
