@@ -1340,6 +1340,11 @@ body {
         font-size: 15px;
     }
 
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
     .team-card h3 {
         font-size: 20px;
     }
