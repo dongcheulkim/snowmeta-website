@@ -416,7 +416,7 @@ body {
 /* 금액안내 */
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 30px;
 }
@@ -1357,6 +1357,11 @@ body {
         font-size: 13px;
     }
 
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
     .pricing-card h3 {
         font-size: 22px;
     }
@@ -1521,6 +1526,11 @@ body {
 
     .team-role {
         font-size: 15px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .pricing-card h3 {
