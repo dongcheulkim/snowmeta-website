@@ -87,10 +87,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // 카드 필터링
                 teamCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+
                     if (filter === 'all') {
                         card.classList.remove('hidden');
+                    } else if (filter === 'ski') {
+                        // 스키는 board를 제외한 모든 카테고리
+                        if (category !== 'board') {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
                     } else {
-                        const category = card.getAttribute('data-category');
                         if (category === filter) {
                             card.classList.remove('hidden');
                         } else {
