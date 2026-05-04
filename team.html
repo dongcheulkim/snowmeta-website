@@ -16,13 +16,18 @@
         <div class="container">
             <a href="index.html" class="logo"><img src="images/logo.svg" alt="스노우메타" class="logo-img"></a>
             <ul class="nav-menu">
-                <li><a href="index.html">홈</a></li>
-                <li><a href="branches.html">지점안내</a></li>
-                <li><a href="team.html">소속선수</a></li>
-                <li><a href="pricing.html">금액안내</a></li>
-                <li><a href="store.html">스토어</a></li>
-                <li><a href="contact.html">문의하기</a></li>
+                <li><a href="index.html" data-en="Home">홈</a></li>
+                <li><a href="branches.html" data-en="Branches">지점안내</a></li>
+                <li><a href="team.html" data-en="Athletes">소속선수</a></li>
+                <li><a href="pricing.html" data-en="Pricing">금액안내</a></li>
+                <li><a href="store.html" data-en="Store">스토어</a></li>
+                <li><a href="contact.html" data-en="Contact">문의하기</a></li>
             </ul>
+            <div class="lang-toggle">
+                <button data-lang="ko" class="active">KR</button>
+                <span class="lang-divider">/</span>
+                <button data-lang="en">EN</button>
+            </div>
         </div>
     </nav>
 
@@ -30,7 +35,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Team Snowmeta</h1>
-            <p>우리는 장비 관리가 곧 경기력이라고 믿는다.<br>그래서 우리는 장비를, 선수는 레이스를 책임진다.</p>
+            <p data-en="We believe equipment care is performance.<br>We tune the gear; athletes own the race.">우리는 장비 관리가 곧 경기력이라고 믿는다.<br>그래서 우리는 장비를, 선수는 레이스를 책임진다.</p>
         </div>
     </section>
 
@@ -38,9 +43,9 @@
     <section class="section">
         <div class="container">
             <div class="team-filter">
-                <button class="filter-btn active" data-filter="all">전체</button>
-                <button class="filter-btn" data-filter="ski">스키</button>
-                <button class="filter-btn" data-filter="board">보드</button>
+                <button class="filter-btn active" data-filter="all" data-en="All">전체</button>
+                <button class="filter-btn" data-filter="ski" data-en="Ski">스키</button>
+                <button class="filter-btn" data-filter="board" data-en="Board">보드</button>
             </div>
             <div class="team-grid">
                 <div class="team-card" data-category="national" data-photos='["images/park-jeyoon-1.jpg","images/park-jeyoon-2.jpg","images/park-jeyoon-3.jpg"]'>
@@ -332,11 +337,11 @@
         <div class="container">
             <p class="footer-brand">Snow Meta</p>
             <div class="footer-contact">
-                <p>카카오톡: @스노우메타</p>
-                <p>인스타그램: @snow.meta</p>
-                <p>이메일: snowmeta@naver.com</p>
+                <p data-en="KakaoTalk: @snowmeta">카카오톡: @스노우메타</p>
+                <p data-en="Instagram: @snow.meta">인스타그램: @snow.meta</p>
+                <p data-en="Email: snowmeta@naver.com">이메일: snowmeta@naver.com</p>
             </div>
-            <p class="footer-hours">CS 운영시간 08:00 - 20:00</p>
+            <p class="footer-hours" data-en="Service Hours 08:00 – 20:00">CS 운영시간 08:00 - 20:00</p>
             <p class="footer-copy">© SnowMeta. All Rights Reserved.</p>
         </div>
     </footer>

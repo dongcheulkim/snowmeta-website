@@ -1,3 +1,66 @@
+// 언어 토글 (KR / EN)
+(function() {
+    const STORAGE_KEY = 'snowmeta-lang';
+
+    function initLang() {
+        const elements = document.querySelectorAll('[data-en]');
+        elements.forEach(el => {
+            el.dataset.ko = el.innerHTML;
+        });
+
+        const saved = localStorage.getItem(STORAGE_KEY) || 'ko';
+        applyLang(saved);
+
+        const buttons = document.querySelectorAll('.lang-toggle button[data-lang]');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                applyLang(btn.dataset.lang);
+            });
+        });
+    }
+
+    function applyLang(lang) {
+        if (lang !== 'ko' && lang !== 'en') lang = 'ko';
+
+        document.documentElement.lang = lang;
+        document.body.classList.toggle('lang-en', lang === 'en');
+        document.body.classList.toggle('lang-ko', lang === 'ko');
+
+        document.querySelectorAll('[data-en]').forEach(el => {
+            const next = lang === 'en' ? el.dataset.en : el.dataset.ko;
+            if (next != null) el.innerHTML = next;
+        });
+
+        document.querySelectorAll('.lang-toggle button[data-lang]').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        localStorage.setItem(STORAGE_KEY, lang);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLang);
+    } else {
+        initLang();
+    }
+})();
+
+// Vercel Toolbar 강제 제거 (CSS만으로 못 잡는 케이스 대비)
+(function() {
+    function purgeVercelToolbar() {
+        const sel = 'vercel-live-feedback, vercel-toolbar, [data-vercel-toolbar], [data-vercel-feedback-button], [id^="vercel-toolbar"], [id^="vercel-feedback"], [class*="vercel-live"], [class*="vercel-toolbar"]';
+        document.querySelectorAll(sel).forEach(el => el.remove());
+    }
+    purgeVercelToolbar();
+    setTimeout(purgeVercelToolbar, 500);
+    setTimeout(purgeVercelToolbar, 2000);
+    setTimeout(purgeVercelToolbar, 5000);
+
+    if (typeof MutationObserver !== 'undefined') {
+        new MutationObserver(purgeVercelToolbar).observe(document.documentElement, { childList: true, subtree: true });
+    }
+})();
+
 // 스무스 스크롤
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

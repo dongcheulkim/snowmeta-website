@@ -3,6 +3,24 @@
    Color: Deep Black + Champagne Gold
    ============================================ */
 
+/* Vercel Toolbar 숨김 */
+vercel-live-feedback,
+[data-vercel-toolbar],
+[data-vercel-feedback-button],
+#vercel-live-feedback,
+#__vercel-toolbar,
+[id^="vercel-toolbar"],
+[id^="vercel-feedback"],
+[class*="vercel-toolbar"],
+[class*="vercel-live"],
+.__vercel_toolbar,
+vercel-toolbar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 /* ---------- Tokens ---------- */
 :root {
     --bg-primary: #0a0a0a;
@@ -153,6 +171,43 @@ a {
 
 .nav-menu a:hover::after {
     width: 100%;
+}
+
+/* Language Toggle */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 32px;
+    padding-left: 32px;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lang-toggle button {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    padding: 4px 6px;
+    transition: color 0.3s var(--ease);
+}
+
+.lang-toggle button:hover {
+    color: var(--text-on-dark);
+}
+
+.lang-toggle button.active {
+    color: var(--gold);
+}
+
+.lang-divider {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 11px;
+    font-weight: 300;
 }
 
 /* ============================================
@@ -2916,6 +2971,9 @@ a {
     .nav-menu { gap: 18px; }
     .nav-menu a { font-size: 12px; }
 
+    .lang-toggle { margin-left: 18px; padding-left: 18px; }
+    .lang-toggle button { font-size: 11px; }
+
     .hero {
         min-height: 480px;
         padding: 80px 20px;
@@ -3018,6 +3076,8 @@ a {
 
     .nav-menu { flex-wrap: wrap; justify-content: center; gap: 14px; }
     .nav-menu a { font-size: 11px; }
+
+    .lang-toggle { margin-left: 0; padding-left: 0; border-left: none; }
 
     .hero { min-height: 380px; padding: 60px 16px; }
 
