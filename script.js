@@ -1,3 +1,53 @@
+// 모바일 햄버거 메뉴
+(function() {
+    function initNav() {
+        const toggle = document.querySelector('.nav-toggle');
+        const menu = document.querySelector('.nav-menu');
+        if (!toggle || !menu) return;
+
+        function close() {
+            document.body.classList.remove('nav-open');
+            toggle.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+
+        function open() {
+            document.body.classList.add('nav-open');
+            toggle.classList.add('active');
+            toggle.setAttribute('aria-expanded', 'true');
+        }
+
+        toggle.addEventListener('click', () => {
+            if (document.body.classList.contains('nav-open')) close();
+            else open();
+        });
+
+        menu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', close);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') close();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!document.body.classList.contains('nav-open')) return;
+            if (menu.contains(e.target) || toggle.contains(e.target)) return;
+            close();
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) close();
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNav);
+    } else {
+        initNav();
+    }
+})();
+
 // 언어 토글 (KR / EN)
 (function() {
     const STORAGE_KEY = 'snowmeta-lang';
