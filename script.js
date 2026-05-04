@@ -46,6 +46,21 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
+
+    // 홈페이지 reveal 요소 (V2)
+    const revealEls = document.querySelectorAll('.reveal');
+    if (revealEls.length > 0) {
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), idx * 60);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        revealEls.forEach(el => revealObserver.observe(el));
+    }
 });
 
 // 네비게이션 스크롤 효과
