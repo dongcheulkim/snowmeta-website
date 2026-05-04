@@ -48,28 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// 네비게이션 활성화 상태
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 100) {
-            current = section.getAttribute('id');
+// 네비게이션 스크롤 효과
+const navbar = document.querySelector('.navbar');
+if (navbar) {
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 40) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
     });
-
-    navLinks.forEach(link => {
-        link.style.color = '#1a1a1a';
-        if (link.getAttribute('href') === `#${current}`) {
-            link.style.color = '#666666';
-            link.style.fontWeight = 'bold';
-        }
-    });
-});
+}
 
 // 소속선수 필터 기능
 document.addEventListener('DOMContentLoaded', function() {
